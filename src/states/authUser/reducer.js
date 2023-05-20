@@ -14,4 +14,4 @@ function authUserReducers(authUser = null, action = {}) {
   }
 }
 
-export { authUserReducers };
+export default authUserReducers;

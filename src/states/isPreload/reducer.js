@@ -12,4 +12,4 @@ function isPreloadReducers(isPreload = true, action = {}) {
   }
 }
 
-export { isPreloadReducers };
+export default isPreloadReducers;
