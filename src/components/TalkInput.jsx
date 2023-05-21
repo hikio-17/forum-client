@@ -19,7 +19,7 @@ function TalkInput({ addTalk }) {
 
   return (
     <div className="talk-input">
-      <textarea type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
+      <textarea name="text" type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
       <p className="talk-input__char-left">
         <strong>{text.length}</strong>
         /320

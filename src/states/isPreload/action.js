@@ -1,7 +1,9 @@
 /**
  * @TODO: Define all the actions (creator) for the isPreLoad state
  */
+/* eslint-disable import/no-extraneous-dependencies */
 
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 import { setAuthUserActionCreator } from '../authUser/action';
 
@@ -21,6 +23,7 @@ function setIsPreloadActionCreator(isPreload) {
 /** THUNK FUNCTION */
 function asyncPreloadProcess() {
   return async (dispatch) => {
+    dispatch(showLoading());
     try {
       // preload process
       const authUser = await api.getOwnProfile();
@@ -32,6 +35,8 @@ function asyncPreloadProcess() {
       // end preload process
       dispatch(setIsPreloadActionCreator(false));
     }
+
+    dispatch(hideLoading());
   };
 }
 

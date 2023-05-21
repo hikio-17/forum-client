@@ -16,7 +16,7 @@ function talksReducer(talks = [], action = {}) {
         if (talk.id === action.payload.talkId) {
           return {
             ...talk,
-            likes: talks.likes.includes(action.payload.userId) ? talks.likes.filter((like) => like.id !== action.payload.userId) : talks.likes.concat([action.payload.userid]),
+            likes: talk.likes.includes(action.payload.userId) ? talk.likes.filter((id) => id !== action.payload.userId) : talk.likes.concat([action.payload.userId]),
           };
         }
         return talk;
